@@ -1,0 +1,4 @@
+github_url  https://github.com/Rashidramadhan/project02Repo
+repo name is project02Repo with two branches;
+ master branch with the latest code
+ dev brach with initial code
