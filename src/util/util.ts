@@ -8,6 +8,7 @@ import Jimp = require("jimp");
 //    inputURL: string - a publicly accessible url to an image file
 // RETURNS
 //    an absolute path to a filtered image locally saved file
+// start of original code ------------------------------------
 export async function filterImageFromURL(inputURL: string): Promise<string> {
   return new Promise(async (resolve, reject) => {
     try {
@@ -26,7 +27,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
     }
   });
 }
-
+// end of original code--------------------------------------------------
 // deleteLocalFiles
 // helper function to delete files on the local disk
 // useful to cleanup after tasks
