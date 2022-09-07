@@ -5,4 +5,5 @@ repo name is project02Repo with two branches;
 postman basic authorisation credentials
 username = udagramAPI
 password = udagramPassword
-elasticbeanstalk URL == http://udagram-projectfinal-dev-dev.us-east-1.elasticbeanstalk.com/
+# elasticbeanstalk url
+elasticbeanstalk URL = http://udagram-projectfinal-dev-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://s-media-cache-ak0.pinimg.com/736x/c9/8f/e1/c98fe17dc7de72bb29c34a0c79ef5762.jpg

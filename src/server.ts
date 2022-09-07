@@ -1,4 +1,5 @@
 import express from 'express';
+import { Request, Response} from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
@@ -29,17 +30,17 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
     /****************************************start of my assignment************************************ */
     //   our main endpoint
-    app.get("/filteredimage", async(request, response) => {
-        const image_link:string = request.query.image_url;
+    app.get("/filteredimage", async(req : Request, res: Response) => {
+        const image_link:string = req.query.image_url;
         // a condition to check if the image url is  valid
         if (!image_link){
-            response.status(400).send(`The Image link is required`);
+            res.status(400).send(`The Image link is required`);
         }
         // a console the test the print output
          console.log('..........test...........', image_link);
         // if the url is valid and working the code proceed to store the file in a temporary location which will be deleted afterward
         const filteredpath:string = await filterImageFromURL(image_link);
-        response.status(200).sendFile(filteredpath, ()=>
+        res.status(200).sendFile(filteredpath, ()=>
         {
             deleteLocalFiles([filteredpath]);
         });
@@ -50,8 +51,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
     // Root Endpoint
     // Displays a simple message to the user
-    app.get( "/", async ( request, response ) => {
-        response.send("try GET " +
+    app.get( "/", async ( req : Request, res: Response ) => {
+        res.send("try GET " +
             "" +
             "={{}}")
     } );
